@@ -9,7 +9,7 @@ updates:
   - package-ecosystem: 'npm'
     directory: '/'
     ignore:
-      - dependency-name: '*'npm
+      - dependency-name: '*'
         update-types:
           - version-update:semver-major
           - version-update:semver-minor
