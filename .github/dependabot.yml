@@ -15,7 +15,6 @@ updates:
       interval: "monthly"
       time: "09:00"
       timezone: "Asia/Tokyo"
-    open-pull-requests-limit: 1
     target-branch: "develop"
     labels:
       - "dependencies"
