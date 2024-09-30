@@ -5,25 +5,25 @@
 
 version: 2
 updates:
-  # patchバージョンアップ
   - package-ecosystem: 'npm'
-    directory: '/'
+  - directory: '/'
+  - target-branch: 'develop'
+  - schedule:
+      interval: 'monthly'
+      time: '09:00'
+      timezone: 'Asia/Tokyo'
+  - labels: 'dependencies'
+  - allow:
+      - dependency-type: 'all'
+  - versioning-strategy: increase-if-necessary
+
+    # patchバージョンアップ
     ignore:
       - dependency-name: '*'
         update-types:
           - version-update:semver-major
           - version-update:semver-minor
-    schedule:
-      interval: 'monthly'
-      time: '09:00'
-      timezone: 'Asia/Tokyo'
     open-pull-requests-limit: 1
-    target-branch: 'develop'
-    labels:
-      - 'dependencies'
-    allow:
-      - dependency-type: 'all'
-    versioning-strategy: increase-if-necessary
     groups: # patchはグループでプルリク作成
       patch-group:
         applies-to: version-updates
@@ -32,22 +32,10 @@ updates:
         update-types:
           - 'patch'
 
-  # minorバージョンアップ
-  - package-ecosystem: 'npm'
-    directory: '/'
+    # minorバージョンアップ
     ignore:
       - dependency-name: '*'
         update-types:
           - version-update:semver-major
           - version-update:semver-patch
-    schedule:
-      interval: 'monthly'
-      time: '09:00'
-      timezone: 'Asia/Tokyo'
     open-pull-requests-limit: 4
-    target-branch: 'develop'
-    labels:
-      - 'dependencies'
-    allow:
-      - dependency-type: 'all'
-    versioning-strategy: increase-if-necessary
