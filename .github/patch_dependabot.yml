@@ -11,10 +11,12 @@ updates:
       - dependency-name: "*"
         update-types:
           - version-update:semver-major
+          - version-update:semver-minor
     schedule:
       interval: "monthly"
       time: "09:00"
       timezone: "Asia/Tokyo"
+    open-pull-requests-limit: 1
     target-branch: "develop"
     labels:
       - "dependencies"
