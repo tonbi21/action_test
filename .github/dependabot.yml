@@ -13,7 +13,8 @@ updates:
           - version-update:semver-major
     schedule:
       interval: "daily"
-      time: "09:00"
+      time: "14:30"
+      # time: "09:00"
       timezone: "Asia/Tokyo"
     target-branch: "develop"
     labels:
